@@ -1,0 +1,615 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Harmony – Emotion‑Driven Music Experience</title>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+  <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+
+  <style>
+    /* Variables for easy color changes - MATCHING LOGO COLORS */
+:root {
+  --primary-color: #375FFF; 
+  --secondary-color: #5C7EFF; 
+  --accent-color: #9EC0FF;   
+  --text-dark: #2c3e50;
+  --text-light: #ecf0f1;
+  --background-light: #f9fbfd;
+  --background-white: #ffffff;
+  --light-bg-accent: #eaf3ff; 
+}
+
+/* Base Styles & Typography */
+body {
+  margin: 0;
+  font-family: 'Poppins', sans-serif;
+  background: var(--background-light);
+  color: var(--text-dark);
+  line-height: 1.6;
+  overflow-x: hidden; 
+}
+.container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 20px;
+}
+h1, h2, h3 {
+  font-weight: 700;
+  line-height: 1.2;
+}
+h2 {
+  font-size: 2.5rem;
+  color: var(--primary-color);
+  margin-bottom: 10px;
+}
+p {
+  font-weight: 400;
+}
+.section {
+  padding: 100px 0;
+  text-align: center;
+}
+
+/* --- Header --- */
+header {
+  background: var(--background-white);
+  box-shadow: 0 4px 12px rgba(0,0,0,0.05);
+  position: sticky;
+  top: 0;
+  z-index: 100;
+}
+.header-content {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 15px 20px;
+  flex-wrap: wrap; 
+}
+.logo-img {
+  height: 100px; 
+  vertical-align: middle;
+}
+header nav {
+    width: auto; /* Resetting width to allow flex-end centering */
+    display: flex; 
+    justify-content: flex-end;
+}
+header nav a {
+  margin-left: 25px;
+  text-decoration: none;
+  color: var(--text-dark);
+  font-weight: 600;
+  transition: color 0.3s, transform 0.3s ease; 
+  padding-bottom: 2px;
+  position: relative; 
+}
+header nav a:hover {
+  color: var(--primary-color);
+  transform: translateY(-2px);
+}
+header nav a::after { 
+  content: '';
+  position: absolute;
+  width: 0;
+  height: 2px;
+  display: block;
+  margin-top: 5px;
+  right: 0;
+  background: var(--primary-color);
+  transition: width 0.3s ease;
+}
+header nav a:hover::after {
+  width: 100%;
+  left: 0;
+  background: var(--primary-color);
+}
+.nav-cta {
+  background-color: var(--primary-color);
+  color: white !important;
+  padding: 8px 18px; 
+  border-radius: 6px; 
+  margin-left: 30px;
+  transition: background-color 0.3s, transform 0.3s ease, box-shadow 0.3s ease;
+  box-shadow: 0 4px 8px rgba(0,0,0,0.1); 
+}
+.nav-cta:hover {
+  background-color: var(--secondary-color);
+  transform: translateY(-2px); 
+  box-shadow: 0 6px 12px rgba(0,0,0,0.2);
+}
+.nav-cta:active { 
+  transform: translateY(0);
+  box-shadow: 0 2px 4px rgba(0,0,0,0.2);
+}
+.nav-cta::after { 
+    display: none;
+}
+
+
+/* --- Hero Section --- */
+.hero {
+  position: relative;
+  background: linear-gradient(135deg, var(--primary-color) 0%, var(--secondary-color) 100%);
+  color: var(--text-light);
+  min-height: 550px; 
+  display: flex;
+  align-items: center;
+  clip-path: polygon(0 0, 100% 0, 100% 90%, 0 100%);
+  padding-bottom: 80px;
+}
+.hero-content {
+  padding-top: 50px;
+  max-width: 800px;
+  text-align: left;
+}
+.hero h1 {
+  font-size: 3.8rem; 
+  margin-bottom: 20px;
+}
+.hero p {
+  font-size: 1.4rem; 
+  opacity: 0.95;
+  max-width: 650px;
+  margin-bottom: 40px;
+}
+
+/* --- CTA Buttons --- */
+.cta-button {
+  padding: 16px 40px; 
+  border-radius: 8px;
+  font-size: 1.15rem; 
+  font-weight: 600;
+  border: none;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+}
+.primary-btn {
+  background: white;
+  color: var(--primary-color);
+  box-shadow: 0 8px 15px rgba(0, 0, 0, 0.2);
+}
+.primary-btn:hover {
+  background: #e0e0e0;
+  transform: translateY(-3px); 
+  box-shadow: 0 12px 20px rgba(0, 0, 0, 0.3);
+}
+.primary-btn:active { 
+  transform: translateY(0);
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+.secondary-btn {
+  background: var(--primary-color);
+  color: white;
+  box-shadow: 0 8px 15px rgba(0, 0, 0, 0.2);
+}
+.secondary-btn:hover {
+  background: var(--secondary-color);
+  transform: translateY(-3px);
+  box-shadow: 0 12px 20px rgba(0, 0, 0, 0.3);
+}
+.secondary-btn:active { 
+  transform: translateY(0);
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+/* --- Features Section --- */
+.features-section {
+  padding-top: 50px;
+}
+.features-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); 
+  gap: 30px;
+  margin-top: 50px;
+  text-align: left;
+}
+.feature-card {
+  background: var(--light-bg-accent); 
+  padding: 35px; 
+  border-radius: 12px;
+  border: 2px solid transparent; 
+  box-shadow: 0 6px 20px rgba(0,0,0,0.08);
+  transition: transform 0.3s, box-shadow 0.3s, border-color 0.3s;
+}
+.feature-card:hover {
+  transform: translateY(-8px); 
+  box-shadow: 0 15px 30px rgba(0,0,0,0.18);
+  border-color: var(--primary-color); 
+}
+.icon-lg {
+  font-size: 3rem; 
+  color: var(--secondary-color);
+  margin-bottom: 20px;
+  display: block;
+}
+.feature-card h3 {
+  color: var(--text-dark);
+  font-size: 1.5rem; 
+  margin-bottom: 12px;
+}
+/* Styling for Project Members in the Footer */
+.members-emails p {
+    /* Better spacing for stacked name/email lines */
+    line-height: 1.4; 
+    /* Spacing between different members */
+    margin-bottom: 15px; 
+}
+
+.members-emails .member-linkedin-icon {
+    /* Smaller size appropriate for a list */
+    font-size: 1.1rem; 
+    /* Space between email and icon */
+    margin-left: 8px; 
+    /* LinkedIn's official blue for contrast on the dark footer */
+    color: #0077b5; 
+    /* Remove underline */
+    text-decoration: none; 
+}
+
+.members-emails .member-linkedin-icon:hover {
+    /* Use an accent color on hover */
+    color: var(--accent-color); 
+}
+
+/* --- How It Works Section --- */
+.how-it-works-section {
+  background: var(--background-white); 
+  padding-bottom: 120px; 
+}
+.subtitle {
+  max-width: 800px;
+  margin: 15px auto 60px; 
+  font-size: 1.2rem; 
+  color: #555;
+}
+.dark-text {
+  color: var(--text-dark);
+}
+.step-process {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-wrap: wrap;
+  margin-top: 40px;
+}
+.step-item {
+  width: 220px; 
+  padding: 25px;
+  background: var(--light-bg-accent); 
+  border-radius: 10px;
+  box-shadow: 0 4px 15px rgba(0,0,0,0.05);
+  transition: transform 0.3s ease;
+}
+.step-item:hover {
+  transform: translateY(-5px);
+}
+.step-item i {
+  font-size: 3.5rem; 
+  color: var(--primary-color);
+  margin-bottom: 15px;
+}
+.step-item h4 {
+    font-size: 1.3rem;
+    color: var(--text-dark);
+    margin-bottom: 8px;
+}
+.step-arrow {
+  color: var(--accent-color); 
+  font-size: 2rem; 
+  margin: 0 30px;
+}
+
+/* --- CTA Section --- */
+.cta-section {
+  background: linear-gradient(135deg, var(--secondary-color) 0%, var(--accent-color) 100%);
+  color: white;
+  padding: 80px 0;
+  border-radius: 15px; 
+  margin: 0 20px 80px; 
+  box-shadow: 0 10px 30px rgba(0,0,0,0.2);
+}
+.cta-section h2 {
+  color: white; 
+  font-size: 2.8rem;
+  margin-bottom: 20px;
+}
+.cta-section p {
+  font-size: 1.3rem;
+  max-width: 700px;
+  margin: 0 auto 40px;
+  opacity: 0.9;
+}
+
+
+/* --- Footer --- */
+.footer {
+  background: var(--text-dark);
+  color: #adbbc4; 
+  padding: 50px 0; /* More padding top/bottom */
+}
+.footer-content {
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    text-align: left;
+}
+.footer-col {
+    padding: 10px 20px;
+    flex-basis: 25%; /* Roughly equal columns */
+    min-width: 150px; /* Ensure columns don't get too small */
+}
+.footer-col h4 {
+    color: white;
+    font-size: 1.1rem;
+    margin-bottom: 20px;
+    font-weight: 600;
+}
+.footer-col p {
+    margin: 5px 0;
+    font-size: 0.95rem;
+}
+.footer-col a {
+    color: #adbbc4;
+    text-decoration: none;
+    transition: color 0.3s;
+}
+.footer-col a:hover {
+    color: var(--accent-color);
+    text-decoration: underline;
+}
+
+/* Social media links styling in footer */
+.social-links {
+    display: flex;
+    gap: 15px;
+    margin-top: 10px;
+}
+.social-links a {
+    color: white;
+    font-size: 1.5rem;
+}
+.social-links a:hover {
+    color: var(--secondary-color);
+    transform: translateY(-2px);
+}
+.contact-emails i {
+    color: var(--accent-color);
+    margin-right: 5px;
+}
+
+/* --- Media Queries for Responsiveness --- */
+@media (max-width: 992px) {
+  .hero h1 { font-size: 3rem; }
+  .hero-content { text-align: center; }
+  .step-arrow { display: none; }
+  .step-item { margin-bottom: 25px; }
+  .step-process { flex-direction: column; }
+  .logo-img { height: 40px; } 
+  .cta-section { margin: 0 15px 60px; }
+  
+  .footer-col { flex-basis: 45%; } /* Two columns on mid-sized screens */
+}
+
+@media (max-width: 768px) {
+  h2 { font-size: 2.2rem; }
+  .hero h1 { font-size: 2.5rem; }
+  .hero p { font-size: 1.1rem; }
+  .hero-content { padding-top: 30px; }
+  .header-content { padding: 10px 20px; }
+  header nav { 
+    justify-content: center; 
+    margin-top: 10px;
+  }
+  header nav a { margin-left: 10px; margin-right: 10px; font-size: 0.9rem; }
+  .nav-cta { padding: 7px 14px; margin-left: 15px; }
+  .features-grid { grid-template-columns: 1fr; }
+  .section { padding: 80px 0; }
+  .cta-section h2 { font-size: 2.2rem; }
+  .cta-section p { font-size: 1.1rem; }
+  
+  .footer-content { justify-content: space-around; }
+}
+
+@media (max-width: 480px) {
+  .hero { clip-path: polygon(0 0, 100% 0, 100% 95%, 0 100%); padding-bottom: 50px; min-height: 450px; }
+  
+  .header-content {
+      flex-direction: column; 
+      align-items: center;
+  }
+  header nav { 
+      display: flex; 
+      flex-direction: column; 
+      align-items: center;
+      margin-top: 10px;
+  }
+  header nav a {
+      margin: 5px 0; 
+      font-size: 1rem;
+  }
+  .nav-cta {
+      margin: 10px 0; 
+      width: 100%;
+      text-align: center;
+  }
+
+  .logo-img { height: 35px; } 
+  .hero h1 { font-size: 2rem; margin-bottom: 15px; }
+  .hero p { font-size: 1rem; margin-bottom: 30px; }
+  .cta-button { padding: 12px 25px; font-size: 1rem; }
+  .cta-section { margin: 0 10px 40px; padding: 60px 0; }
+  .cta-section h2 { font-size: 1.8rem; }
+  
+  .footer-content { flex-direction: column; } /* Single column stack */
+  .footer-col { flex-basis: 100%; text-align: center; padding: 10px 0; }
+  .footer-col h4 { margin-top: 15px; }
+  .social-links { justify-content: center; }
+}
+  </style>
+</head>
+<body>
+  <header>
+    <div class="container header-content">
+      <div class="logo">
+        <img src="logo.png" alt="Harmony Logo" class="logo-img">
+      </div>
+      <nav>
+        <a href="#features">Features</a>
+        <a href="#how">How It Works</a>
+        <a href="#cta" class="nav-cta">Get Started</a>
+      </nav>
+    </div>
+  </header>
+
+  <section class="hero" data-aos="fade-up">
+    <div class="container hero-content">
+      <h1>A Music Experience that Understands Your **Emotions**</h1>
+      <p>Harmony uses real‑time facial emotion and posture detection to recommend the perfect song from Spotify — automatically and intelligently.</p>
+      <button class="cta-button primary-btn">Try Harmony Now <i class="fas fa-arrow-right"></i></button>
+    </div>
+  </section>
+
+  <section id="features" class="section features-section" data-aos="fade-up">
+    <div class="container">
+      <h2>Why Harmony?</h2>
+      <div class="features-grid">
+        <div class="feature-card" data-aos="zoom-in" data-aos-delay="100">
+          <i class="fas fa-face-laugh-squint icon-lg"></i>
+          <h3>Emotion Detection</h3>
+          <p>Your webcam reads your expressions and posture to understand how you feel in real time.</p>
+        </div>
+        <div class="feature-card" data-aos="zoom-in" data-aos-delay="200">
+          <i class="fab fa-spotify icon-lg"></i>
+          <h3>Spotify Integration</h3>
+          <p>Harmony connects with the Spotify API to instantly fetch songs that match your emotional state.</p>
+        </div>
+        <div class="feature-card" data-aos="zoom-in" data-aos-delay="300">
+          <i class="fas fa-brain icon-lg"></i>
+          <h3>Smart Recommendations</h3>
+          <p>Combining emotion data + user input, Harmony delivers hyper‑personalized music suggestions.</p>
+        </div>
+        <div class="feature-card" data-aos="zoom-in" data-aos-delay="400">
+          <i class="fas fa-sliders-h icon-lg"></i>
+          <h3>Automatic & Manual Modes</h3>
+          <p>Let Harmony track you every 30 seconds — or simply type what you feel and get suggestions.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section id="how" class="section how-it-works-section" data-aos="fade-up">
+    <div class="container">
+      <h2 class="dark-text">How It Works</h2>
+      <p class="subtitle">
+        Harmony captures your facial expressions and posture through your webcam, identifies your emotional state, and then selects music through the Spotify API that best fits your mood.
+      </p>
+      <div class="step-process">
+        <div class="step-item" data-aos="fade-right" data-aos-delay="100">
+          <i class="fas fa-video"></i>
+          <h4>1. Detect</h4>
+          <p>Webcam captures expression.</p>
+        </div>
+        <i class="fas fa-arrow-right step-arrow"></i>
+        <div class="step-item" data-aos="fade-right" data-aos-delay="200">
+          <i class="fas fa-hand-sparkles"></i>
+          <h4>2. Analyze</h4>
+          <p>AI determines your mood.</p>
+        </div>
+        <i class="fas fa-arrow-right step-arrow"></i>
+        <div class="step-item" data-aos="fade-right" data-aos-delay="300">
+          <i class="fas fa-music"></i>
+          <h4>3. Recommend</h4>
+          <p>Spotify playlist is served.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section id="cta" class="section cta-section" data-aos="fade-up">
+    <div class="container">
+      <h2>Experience Emotion‑Driven Music</h2>
+      <p>Your mood. Your music. Automatically. Start your free trial today.</p>
+      <button class="cta-button secondary-btn">Launch Harmony Today</button>
+    </div>
+  </section>
+  
+  <footer class="footer">
+    <div class="container footer-content">
+        <div class="footer-col copyright-info">
+            <p>© 2025 Harmony</p>
+            <p>Emotion-Driven Music Recommendation</p>
+        </div>
+        
+        <div class="footer-col social-links-col">
+            <h4>Follow Us</h4>
+            <div class="social-links">
+                <a href="https://instagram.com/yourharmony" target="_blank" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
+                <a href="https://linkedin.com/company/yourharmony" target="_blank" aria-label="LinkedIn"><i class="fab fa-linkedin-in"></i></a>
+            </div>
+        </div>
+        
+        <div class="footer-col contact-emails">
+            <h4>Contact & Support</h4>
+            <p><i class="fas fa-envelope"></i> <a href="mailto:harmonylk25@gmail.com">harmonylk25@gmail.com</a></p>
+        </div>
+        
+       <div class="footer-col members-emails">
+    <h4>Project Members</h4>
+    <p>
+        <strong>R.D.S.Dinal Ranbandara</strong><br>
+        <a href="mailto:">@iit.ac.lk</a>
+        <a href="https://linkedin.com/in/" target="_blank" aria-label="Dinal's LinkedIn" class="member-linkedin-icon"><i class="fab fa-linkedin-in"></i></a>
+    </p>
+    <p>
+        <strong>D.T.D.Weerasinghe</strong><br>
+        <a href="mailto:">@iit.ac.lk</a>
+        <a href="https://linkedin.com/in/" target="_blank" aria-label="Thenuga's LinkedIn" class="member-linkedin-icon"><i class="fab fa-linkedin-in"></i></a>
+    </p>
+    <p>
+        <strong>G.Pooja Bachini Fernando</strong><br>
+        <a href="@iit.ac.lk">@iit.ac.lk</a>
+        <a href="https://linkedin.com/in/" target="_blank" aria-label="Pooja's LinkedIn" class="member-linkedin-icon"><i class="fab fa-linkedin-in"></i></a>
+    </p>
+     <p>
+        <strong>R.A.M.N.Ranaweera</strong><br>
+        <a href="mailto:malithi.20242105@iit.ac.lk">malithi.20242105@iit.ac.lk</a>
+        <a href="www.linkedin.com/in/malithi-nadunika-0a940a353" target="_blank" aria-label="Malithi's LinkedIn" class="member-linkedin-icon"><i class="fab fa-linkedin-in"></i></a>
+    </p>
+     <p>
+        <strong>S.Lavan</strong><br>
+        <a href="mailto:lavan.20241883@gmail.com">@iit.ac.lk</a>
+        <a href="www.linkedin.com/in/" target="_blank" aria-label="Lavan's LinkedIn" class="member-linkedin-icon"><i class="fab fa-linkedin-in"></i></a>
+    </p>
+     <p>
+        <strong>Mesandu Gunawardhana</strong><br>
+        <a href="mailto:@iit.ac.lk">@iit.ac.lk</a>
+        <a href="www.linkedin.com/in/" target="_blank" aria-label="Mesandu's LinkedIn" class="member-linkedin-icon"><i class="fab fa-linkedin-in"></i></a>
+    </p>
+    
+</div>
+    </div>
+  </footer>
+  <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+  <script>
+    AOS.init({
+      duration: 800,
+      once: true
+    });
+
+    // Smooth scrolling for navigation links
+    document.querySelectorAll('nav a[href^="#"]').forEach(anchor => {
+      anchor.addEventListener('click', function (e) {
+        e.preventDefault();
+
+        document.querySelector(this.getAttribute('href')).scrollIntoView({
+          behavior: 'smooth'
+        });
+      });
+    });
+  </script>
+</body>
+</html>
