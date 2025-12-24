@@ -1,7 +1,4 @@
 
-  # Modern Website Redesign
-
-  This is a code bundle for Modern Website Redesign. The original project is available at https://www.figma.com/design/UZMtiaMGN1m1POE51oKUIH/Modern-Website-Redesign.
 
   ## Running the code
 
