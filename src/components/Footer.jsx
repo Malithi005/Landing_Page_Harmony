@@ -1,42 +1,42 @@
 import React from 'react';
 
 const Footer = () => {
-    const members = [
-        {
-            name: 'R.D.S.Dinal Ranbandara',
-            email: '@iit.ac.lk',
-            linkedin: 'https://linkedin.com/in/'
-        },
-        {
-            name: 'D.T.D.Weerasinghe',
-            email: '@iit.ac.lk',
-            linkedin: 'https://linkedin.com/in/'
-        },
-        {
-            name: 'G.Pooja Bachini Fernando',
-            email: '@iit.ac.lk',
-            linkedin: 'https://linkedin.com/in/'
-        },
-        {
-            name: 'R.A.M.N.Ranaweera',
-            email: 'malithi.20242105@iit.ac.lk',
-            linkedin: 'www.linkedin.com/in/malithi-nadunika-0a940a353'
-        },
-        {
-            name: 'S.Lavan',
-            email: 'lavan.20241883@gmail.com',
-            linkedin: 'www.linkedin.com/in/'
-        },
-        {
-            name: 'Mesandu Gunawardhana',
-            email: '@iit.ac.lk',
-            linkedin: 'www.linkedin.com/in/'
-        }
-    ];
+  const members = [
+    {
+      name: 'R.D.S.Dinal Ranbandara',
+      email: 'sandaru.20232635@iit.ac.lk',
+      linkedin: 'https://www.linkedin.com/in/sandaru-dinal-randabandara-796358303?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=android_app'
+    },
+    {
+      name: 'D.T.D.Weerasinghe',
+      email: 'thenuga.20233120@iit.ac.lk',
+      linkedin: 'https://linkedin.com/in/'
+    },
+    {
+      name: 'G.Pooja Bachini Fernando',
+      email: 'pooja.20241577@iit.ac.lk',
+      linkedin: 'https://www.linkedin.com/in/pooja-fernando-a6b528351?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=ios_app'
+    },
+    {
+      name: 'R.A.M.N.Ranaweera',
+      email: 'malithi.20242105@iit.ac.lk',
+      linkedin: 'www.linkedin.com/in/malithi-nadunika-0a940a353'
+    },
+    {
+      name: 'S.Lavan',
+      email: 'lavan.20241883@gmail.com',
+      linkedin: 'www.linkedin.com/in/lavan-saravanabavanandan-a14744348'
+    },
+    {
+      name: 'Mesandu Gunawardhana',
+      email: 'mesandu.20241762@iit.ac.lk',
+      linkedin: 'https://www.linkedin.com/in/mesandugun2007?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=android_app'
+    }
+  ];
 
-    return (
-        <>
-            <style>{`
+  return (
+    <>
+      <style>{`
         .footer {
           background: #2c3e50;
           color: #adbbc4;
@@ -205,59 +205,59 @@ const Footer = () => {
         }
       `}</style>
 
-            <footer className="footer">
-                <div className="footer-content">
-                    <div className="footer-col copyright-info">
-                        <p>© 2025 Harmony</p>
-                        <p>Emotion-Driven Music Recommendation</p>
-                    </div>
+      <footer className="footer">
+        <div className="footer-content">
+          <div className="footer-col copyright-info">
+            <p>© 2025 Harmony</p>
+            <p>Emotion-Driven Music Recommendation</p>
+          </div>
 
-                    <div className="footer-col social-links-col">
-                        <h4>Follow Us</h4>
-                        <div className="social-links">
-                            <a href="https://instagram.com/yourharmony" target="_blank" rel="noopener noreferrer" aria-label="Instagram">
-                                <i className="fab fa-instagram"></i>
-                            </a>
-                            <a href="https://linkedin.com/company/yourharmony" target="_blank" rel="noopener noreferrer" aria-label="LinkedIn">
-                                <i className="fab fa-linkedin-in"></i>
-                            </a>
-                        </div>
-                    </div>
+          <div className="footer-col social-links-col">
+            <h4>Follow Us</h4>
+            <div className="social-links">
+              <a href="https://instagram.com/yourharmony" target="_blank" rel="noopener noreferrer" aria-label="Instagram">
+                <i className="fab fa-instagram"></i>
+              </a>
+              <a href="https://linkedin.com/company/yourharmony" target="_blank" rel="noopener noreferrer" aria-label="LinkedIn">
+                <i className="fab fa-linkedin-in"></i>
+              </a>
+            </div>
+          </div>
 
-                    <div className="footer-col contact-emails">
-                        <h4>Contact & Support</h4>
-                        <p>
-                            <i className="fas fa-envelope"></i>
-                            <a href="mailto:harmonylk25@gmail.com">harmonylk25@gmail.com</a>
-                        </p>
-                    </div>
+          <div className="footer-col contact-emails">
+            <h4>Contact & Support</h4>
+            <p>
+              <i className="fas fa-envelope"></i>
+              <a href="mailto:harmonylk25@gmail.com">harmonylk25@gmail.com</a>
+            </p>
+          </div>
 
-                    <div className="footer-col members-section">
-                        <h4>Project Members</h4>
-                        <div className="members-grid">
-                            {members.map((member, index) => (
-                                <div key={index} className="member-card">
-                                    <strong>{member.name}</strong>
-                                    <div className="member-info">
-                                        <a href={`mailto:${member.email}`}>{member.email}</a>
-                                        <a
-                                            href={member.linkedin}
-                                            target="_blank"
-                                            rel="noopener noreferrer"
-                                            aria-label={`${member.name}'s LinkedIn`}
-                                            className="member-linkedin-icon"
-                                        >
-                                            <i className="fab fa-linkedin-in"></i>
-                                        </a>
-                                    </div>
-                                </div>
-                            ))}
-                        </div>
-                    </div>
+          <div className="footer-col members-section">
+            <h4>Project Members</h4>
+            <div className="members-grid">
+              {members.map((member, index) => (
+                <div key={index} className="member-card">
+                  <strong>{member.name}</strong>
+                  <div className="member-info">
+                    <a href={`mailto:${member.email}`}>{member.email}</a>
+                    <a
+                      href={member.linkedin}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      aria-label={`${member.name}'s LinkedIn`}
+                      className="member-linkedin-icon"
+                    >
+                      <i className="fab fa-linkedin-in"></i>
+                    </a>
+                  </div>
                 </div>
-            </footer>
-        </>
-    );
+              ))}
+            </div>
+          </div>
+        </div>
+      </footer>
+    </>
+  );
 };
 
 export default Footer;
