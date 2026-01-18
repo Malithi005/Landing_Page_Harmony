@@ -33,6 +33,7 @@ dist-ssr
 # Logs
 logs
 *.log
+build_log*.txt
 npm-debug.log*
 yarn-debug.log*
 yarn-error.log*
