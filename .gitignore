@@ -83,3 +83,4 @@ Desktop.ini
 # Build artifacts
 *.js.map
 *.css.map
+node_modules

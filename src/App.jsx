@@ -36,11 +36,13 @@ export default function App() {
         h1,
         h2,
         h3 {
+          margin: 0;
           font-weight: 700;
           line-height: 1.2;
         }
 
         p {
+          margin: 0;
           font-weight: 400;
         }
 
@@ -49,15 +51,40 @@ export default function App() {
           margin: 0 auto;
           padding: 0 20px;
         }
+
+        /* App Layout Styles */
+        .app-container {
+          min-height: 100vh;
+          position: relative;
+          background-color: #f9fbfd;
+        }
+
+        .background-gradient {
+          position: fixed;
+          top: 0;
+          left: 0;
+          right: 0;
+          bottom: 0;
+          pointer-events: none;
+          z-index: 0;
+          background: linear-gradient(to bottom, 
+            rgba(239, 246, 255, 0.3), 
+            rgba(250, 245, 255, 0.4), 
+            rgba(253, 242, 248, 0.3)
+          );
+        }
+
+        .content-wrapper {
+          position: relative;
+          z-index: 10;
+        }
       `}</style>
 
-      <div className="min-h-screen bg-background relative">
+      <div className="app-container">
         {/* Unified gradient background spanning entire page */}
-        <div className="fixed inset-0 pointer-events-none z-0">
-          <div className="absolute inset-0 bg-gradient-to-b from-blue-50/30 via-purple-50/40 to-pink-50/30 dark:from-blue-950/15 dark:via-purple-950/20 dark:to-pink-950/15" />
-        </div>
+        <div className="background-gradient" />
 
-        <div className="relative z-10">
+        <div className="content-wrapper">
           <Header />
           <main>
             <Hero />
