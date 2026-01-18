@@ -1,8 +1,19 @@
+# Landing Page Harmony
 
+Harmony – Emotion‑Driven Music Experience.
 
-  ## Running the code
+## Development
 
-  Run `npm i` to install the dependencies.
+1. Install dependencies:
+   ```bash
+   npm install
+   ```
+2. Run development server:
+   ```bash
+   npm run dev
+   ```
 
-  Run `npm run dev` to start the development server.
-  
+## Deployment
+
+This project is configured to deploy to GitHub Pages via GitHub Actions.
+Any push to the `main` branch will trigger a deployment.
